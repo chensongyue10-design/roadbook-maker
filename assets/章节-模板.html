@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>章节标题</title>
+<style>
+  @page{size:A4;margin:22mm 24mm}
+  *{box-sizing:border-box}
+  body{font-family:"Songti SC","SimSun","宋体",serif;background:#fff;color:#000;
+       line-height:1.7;font-size:10.5pt;max-width:820px;margin:0 auto;padding:36px 46px 64px}
+  h1{font-size:15pt;font-weight:700;text-align:center;margin:0 0 4px}
+  .sub{font-size:10pt;text-align:center;color:#333;margin:0 0 26px}
+  h2{font-size:12pt;font-weight:700;margin:26px 0 10px;padding-bottom:4px;border-bottom:1px solid #999}
+  h3{font-size:11pt;font-weight:700;margin:18px 0 6px}
+  p{margin:7px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:10pt}
+  th{border:1px solid #808080;padding:5px 7px;background:#f2f2f2;font-weight:700;text-align:left}
+  td{border:1px solid #808080;padding:5px 7px;vertical-align:top}
+  td.n{text-align:right;white-space:nowrap}
+  td.c{text-align:center}
+  .meta{border:1px solid #999;padding:10px 14px;background:#fcfcfc;margin:14px 0;font-size:10pt}
+  .meta p{margin:3px 0}
+  .advice{border:1px solid #bbb;border-left:6px solid #666;padding:12px 16px;background:#fafafa;margin:14px 0}
+  .advice .tag{font-weight:700;display:block;margin-bottom:4px}
+  .advice p{margin:5px 0}
+  .warn{border:1px solid #666;padding:12px 16px;background:#f7f7f7;margin:14px 0}
+  .warn .tag{font-weight:700;display:block;margin-bottom:4px}
+  .imgph{border:1px solid #999;background:#fafafa;padding:14px 16px;margin:14px 0;font-size:9.5pt;color:#333}
+  ul,ol{margin:7px 0 7px 0;padding-left:22px}
+  li{margin:3px 0}
+  .foot{margin-top:40px;border-top:1px solid #000;padding-top:10px;font-size:9pt;
+        display:flex;justify-content:space-between}
+  .note{font-size:9pt;color:#333}
+</style>
+</head>
+<body>
+
+<!-- 章标题：一本书里每章只用一次 h1。有 [[part]] 时构建会自动降为 h2 -->
+<h1>第 X 天　从 A 到 B</h1>
+<p class="sub">一句话说清今天的主线</p>
+
+<!-- 行程总览：每天开篇先给硬数字 -->
+<table>
+  <tr><th style="width:22%">项目</th><th>内容</th></tr>
+  <tr><td>里程 / 车程</td><td>XX 公里 / XX 分钟</td></tr>
+  <tr><td>过路费</td><td>不设收费站，费用折入油价</td></tr>
+  <tr><td>核心点位</td><td>A、B、C</td></tr>
+</table>
+
+<!-- 占位框：写上 data-fig 就不怕顺序错；不写则按 book.toml 里 figures 的顺序配 -->
+<div class="imgph" data-fig="fig-01-day1-route">地图位置：第 X 天路线总览</div>
+
+<h2>上午　第一站</h2>
+<p>正文。所有价格、时间、开放状态都要能追到来源。</p>
+
+<div class="advice">
+  <span class="tag">我的建议</span>
+  <p>给判断，不要只给信息。写清「如果你……那就……，否则……」。</p>
+</div>
+
+<div class="warn">
+  <span class="tag">注意</span>
+  <p>会让人吃亏的事写在这里：停错口、排错队、错过末班船。</p>
+</div>
+
+<div class="meta">
+  <p><b>数据来源</b></p>
+  <p>官方渠道：XX 官网（核验日期 2026-10-19）</p>
+  <p>票务：XX 平台（B 级，多源交叉）</p>
+</div>
+
+<h2>下午　第二站</h2>
+<ul>
+  <li>要点一</li>
+  <li>要点二
+    <ul><li>子要点</li></ul>
+  </li>
+</ul>
+
+<div class="foot"><span>书名 · 章节名</span><span>作者：署名</span></div>
+
+</body>
+</html>

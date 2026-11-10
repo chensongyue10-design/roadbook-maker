@@ -1,0 +1,58 @@
+# {{TITLE}} · 书籍配置
+# 这是书的唯一事实来源：章节顺序、图号、图注、显示宽度都在这里。
+# 加一章 = 复制一个 [[chapter]] 块；加一张图 = 加一个 [[figure]] 块。
+
+[book]
+title = "{{TITLE}}"
+subtitle = ""
+author = "{{AUTHOR}}"
+version = "V0.1"
+out_html = "book.html"
+out_xml = "feishu-book.xml"
+figs_dir = "figs"
+png_dir = "figs-png"
+
+# 部（可选）：给一组章节一个上级大标题
+# [[part]]
+# key = "days"
+# title = "第二部分　每日行程"
+
+# ---------------------------------------------------------------------------
+#  章节：顺序即成书顺序
+#  file        章节文件名（和本文件同目录）
+#  figures     按占位框出现顺序列图 id；更稳的写法是在占位框上写 data-fig="图id"
+#  part        所属 [[part]] 的 key（可选）
+#  demote      有 part 时章标题 h1 降为 h2（默认 true）
+#  toc         是否进目录（默认 true）
+# ---------------------------------------------------------------------------
+[[chapter]]
+file = "01-第一章.html"
+demote = false
+
+# 加一章就这么写：
+# [[chapter]]
+# file = "02-第二章.html"
+# part = "days"
+
+# ---------------------------------------------------------------------------
+#  图：number 是成书图号（写死，以后插图不会错位）
+#  kind        route(路线图) / point(点位图) / chart(信息图) / table(表格图)
+#  width_html  HTML 里最大宽度 px，0 = 占满正文
+#  width_feishu 飞书里的显示宽度 px
+# ---------------------------------------------------------------------------
+[[figure]]
+id = "fig-01-day1-route"
+number = 1
+kind = "route"
+caption = "第 1 天路线总览"
+width_html = 0
+width_feishu = 800
+
+# 加一张图就这么写：
+# [[figure]]
+# id = "fig-02-budget"
+# number = 2
+# kind = "chart"
+# caption = "预算构成对照"
+# width_html = 0
+# width_feishu = 780
